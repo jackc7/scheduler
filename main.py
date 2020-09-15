@@ -1,7 +1,7 @@
-from __future__ import print_function
 import datetime
 import pickle
 import os.path
+import quickstart
 from googleapiclient.discovery import build
 from google_auth_oauthlib.flow import InstalledAppFlow
 from google.auth.transport.requests import Request
@@ -24,15 +24,18 @@ The code I currently have creates a test event in my personal calendar.
 Change calendar_id to your own.
 """
 
-with open("token.pickle", "rb") as token:
-    creds = pickle.load(token)
-
+try:
+    with open("token.pickle", "rb") as token:
+        creds = pickle.load(token)
+except:
+    quickstart.main()
+    
 service = build("calendar", "v3", credentials=creds)
 
 
 event = {
     "summary": "Test",
-    "location": "106 Taylor Ave, Dedham, MA, 02026",
+    "location": "Dedham, MA, 02026",
     "description": "Test",
     "start": {
         "dateTime": "2020-09-28T09:00:00-07:00",
