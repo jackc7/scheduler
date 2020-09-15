@@ -2,51 +2,52 @@ class Data:
     """Days school is on and days it's off.
     Starts August 30, 2020
     https://www.dedham.k12.ma.us/cms/lib/MA02213180/Centricity/ModuleInstance/2803/20%2021%20Dedham%20School%20Calendar.pdf
-    """
+    """        
 
-    DAY = [0, 0, 0, 0, 0, 0, 0,
-           0, 0, 0, 0, 0, 0, 0,
-           0, 0, 0, 1, 1, 1, 0,
-           0, 1, 1, 1, 1, 1, 0,
-           0, 1, 1, 1, 1, 1, 0,
-           0, 1, 1, 1, 1, 1, 0,
-           0, 0, 1, 1, 1, 1, 0,
-           0, 1, 1, 1, 1, 1, 0,
-           0, 1, 1, 1, 1, 1, 0,
-           0, 1, 1, 1, 1, 1, 0,
-           0, 1, 1, 0, 1, 1, 0,
-           0, 1, 1, 1, 1, 1, 0,
-           0, 1, 1, 1, 0, 0, 0,
-           0, 1, 1, 1, 1, 1, 0,
-           0, 1, 1, 1, 1, 1, 0,
-           0, 1, 1, 1, 1, 1, 0,
-           0, 1, 1, 0, 0, 0, 0,
-           0, 0, 0, 0, 0, 0, 0,
-           0, 1, 1, 0, 1, 1, 0,
-           0, 1, 1, 1, 1, 1, 0,
-           0, 0, 1, 1, 1, 1, 0,
-           0, 1, 1, 1, 1, 1, 0,
-           0, 1, 1, 1, 1, 1, 0,
-           0, 1, 1, 1, 1, 1, 0,
-           0, 0, 0, 0, 0, 0, 0,
-           0, 1, 1, 1, 1, 1, 0,
-           0, 1, 1, 0, 1, 1, 0,
-           0, 1, 1, 1, 1, 1, 0,
-           0, 1, 1, 1, 1, 1, 0,
-           0, 1, 1, 1, 1, 1, 0,
-           0, 1, 1, 1, 1, 0, 0,
-           0, 1, 1, 1, 1, 1, 0,
-           0, 1, 1, 1, 1, 1, 0,
-           0, 0, 0, 0, 0, 0, 0,
-           0, 1, 1, 1, 1, 1, 0,
-           0, 1, 1, 1, 1, 1, 0,
-           0, 1, 1, 1, 1, 1, 0,
-           0, 1, 1, 1, 1, 1, 0,
-           0, 1, 1, 1, 1, 1, 0,
-           0, 0, 1, 1, 1, 1, 0,
-           0, 1, 1, 1, 1, 1, 0,
-           0, 1, 1, 1, 1, 1, 0,
-           0, 1, 1, 1, 1, 1, 0]
+    DAY = [False, False, False, False, False, False, False,
+           False, False, False, False, False, False, False,
+           False, False, False, True,  True,  True,  False,
+           False, True,  True,  True,  True,  True,  False,
+           False, True,  True,  True,  True,  True,  False,
+           False, True,  True,  True,  True,  True,  False,
+           False, False, True,  True,  True,  True,  False,
+           False, True,  True,  True,  True,  True,  False,
+           False, True,  True,  True,  True,  True,  False,
+           False, True,  True,  True,  True,  True,  False,
+           False, True,  True,  False, True,  True,  False,
+           False, True,  True,  True,  True,  True,  False,
+           False, True,  True,  True,  False, False, False,
+           False, True,  True,  True,  True,  True,  False,
+           False, True,  True,  True,  True,  True,  False,
+           False, True,  True,  True,  True,  True,  False,
+           False, True,  True,  False, False, False, False,
+           False, False, False, False, False, False, False,
+           False, True,  True,  False, True,  True,  False,
+           False, True,  True,  True,  True,  True,  False,
+           False, False, True,  True,  True,  True,  False,
+           False, True,  True,  True,  True,  True,  False,
+           False, True,  True,  True,  True,  True,  False,
+           False, True,  True,  True,  True,  True,  False,
+           False, False, False, False, False, False, False,
+           False, True,  True,  True,  True,  True,  False,
+           False, True,  True,  False, True,  True,  False,
+           False, True,  True,  True,  True,  True,  False,
+           False, True,  True,  True,  True,  True,  False,
+           False, True,  True,  True,  True,  True,  False,
+           False, True,  True,  True,  True,  False, False,
+           False, True,  True,  True,  True,  True,  False,
+           False, True,  True,  True,  True,  True,  False,
+           False, False, False, False, False, False, False,
+           False, True,  True,  True,  True,  True,  False,
+           False, True,  True,  True,  True,  True,  False,
+           False, True,  True,  True,  True,  True,  False,
+           False, True,  True,  True,  True,  True,  False,
+           False, True,  True,  True,  True,  True,  False,
+           False, False, True,  True,  True,  True,  False,
+           False, True,  True,  True,  True,  True,  False,
+           False, True,  True,  True,  True,  True,  False,
+           False, True,  True,  True,  True,  True,  False]
+
 
     DATE = ["2020-08-30", "2020-08-31", "2020-09-01", "2020-09-02", "2020-09-03", "2020-09-04", "2020-09-05", 
             "2020-09-06", "2020-09-07", "2020-09-08", "2020-09-09", "2020-09-10", "2020-09-11", "2020-09-12", 
@@ -100,5 +101,11 @@ class Data:
                [2, 1, 7, 6, 5],
                [4, 3, 2, 1, 7],
                [6, 5, 4, 3, 2]]
-    
-    ALL = 
+
+    ALL = all()
+
+def all():
+    all_list = []
+    for i in range(len(Data.DAY)):
+        all_list.append([Data.DAY[i], Data.DATE[i], Data.PATTERN[i%7]])
+    print(all_list)
