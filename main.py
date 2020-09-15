@@ -12,7 +12,7 @@ from google.auth.transport.requests import Request
 print()
 
 SCOPES = ["https://www.googleapis.com/auth/calendar"]
-calendar_id = "hmdrajoibklf4k59n4ua0ke8i4@group.calendar.google.com" # Main calendar is "primary"
+calendar_id = "primary" # Main calendar is "primary"
 
 """Instructions to get started:
 Run quickstart.py, make sure credentials.json is in working directory.
