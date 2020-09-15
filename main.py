@@ -9,8 +9,6 @@ from google.auth.transport.requests import Request
 # https://developers.google.com/calendar/create-events
 # https://developers.google.com/calendar/quickstart/python
 
-print()
-
 SCOPES = ["https://www.googleapis.com/auth/calendar"]
 calendar_id = "primary" # Main calendar is "primary"
 
