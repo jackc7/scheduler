@@ -47,7 +47,7 @@ def main():
         for event in events:
             start = event['start'].get('dateTime', event['start'].get('date'))
             print(start, event['summary'])
-        _qs
+    _qs()
 
 if __name__ == '__main__':
     main()
