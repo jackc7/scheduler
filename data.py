@@ -2,51 +2,52 @@ class Data:
     """Days school is on and days it's off.
     Starts August 30, 2020
     https://www.dedham.k12.ma.us/cms/lib/MA02213180/Centricity/ModuleInstance/2803/20%2021%20Dedham%20School%20Calendar.pdf
-    """        
-
-    DAY = [False, False, False, False, False, False, False,
-           False, False, False, False, False, False, False,
-           False, False, False, True,  True,  True,  False,
-           False, True,  True,  True,  True,  True,  False,
-           False, True,  True,  True,  True,  True,  False,
-           False, True,  True,  True,  True,  True,  False,
-           False, False, True,  True,  True,  True,  False,
-           False, True,  True,  True,  True,  True,  False,
-           False, True,  True,  True,  True,  True,  False,
-           False, True,  True,  True,  True,  True,  False,
-           False, True,  True,  False, True,  True,  False,
-           False, True,  True,  True,  True,  True,  False,
-           False, True,  True,  True,  False, False, False,
-           False, True,  True,  True,  True,  True,  False,
-           False, True,  True,  True,  True,  True,  False,
-           False, True,  True,  True,  True,  True,  False,
-           False, True,  True,  False, False, False, False,
-           False, False, False, False, False, False, False,
-           False, True,  True,  False, True,  True,  False,
-           False, True,  True,  True,  True,  True,  False,
-           False, False, True,  True,  True,  True,  False,
-           False, True,  True,  True,  True,  True,  False,
-           False, True,  True,  True,  True,  True,  False,
-           False, True,  True,  True,  True,  True,  False,
-           False, False, False, False, False, False, False,
-           False, True,  True,  True,  True,  True,  False,
-           False, True,  True,  False, True,  True,  False,
-           False, True,  True,  True,  True,  True,  False,
-           False, True,  True,  True,  True,  True,  False,
-           False, True,  True,  True,  True,  True,  False,
-           False, True,  True,  True,  True,  False, False,
-           False, True,  True,  True,  True,  True,  False,
-           False, True,  True,  True,  True,  True,  False,
-           False, False, False, False, False, False, False,
-           False, True,  True,  True,  True,  True,  False,
-           False, True,  True,  True,  True,  True,  False,
-           False, True,  True,  True,  True,  True,  False,
-           False, True,  True,  True,  True,  True,  False,
-           False, True,  True,  True,  True,  True,  False,
-           False, False, True,  True,  True,  True,  False,
-           False, True,  True,  True,  True,  True,  False,
-           False, True,  True,  True,  True,  True,  False,
-           False, True,  True,  True,  True,  True,  False]
+    """
+    
+    #      Sun.    Mon.    Tues.   Wed.    Thurs.  Fri.    Sat.   # Saturday's Date
+    DAY = [False,  False,  False,  False,  False,  False,  False, # 2020-09-05
+           False,  False,  False,  False,  False,  False,  False, # 2020-09-12
+           False,  False,  False,  True,   True,   True,   False, # 2020-09-19
+           False,  True,   True,   True,   True,   True,   False, # 2020-09-26
+           False,  True,   True,   True,   True,   True,   False, # 2020-10-03
+           False,  True,   True,   True,   True,   True,   False, # 2020-10-10 Friday: Last day of schedule. Slice 40
+           False,  False,  True,   True,   True,   True,   False, # 2020-10-17
+           False,  True,   True,   True,   True,   True,   False, # 2020-10-24
+           False,  True,   True,   True,   True,   True,   False, # 2020-10-31
+           False,  True,   False,  True,   True,   True,   False, # 2020-11-07
+           False,  True,   True,   False,  True,   True,   False, # 2020-11-14
+           False,  True,   True,   True,   True,   True,   False, # 2020-11-21
+           False,  True,   True,   True,   False,  False,  False, # 2020-11-28
+           False,  True,   True,   True,   True,   True,   False, # 2020-12-05
+           False,  True,   True,   True,   True,   True,   False, # 2020-12-12
+           False,  True,   True,   True,   True,   True,   False, # 2020-12-19
+           False,  True,   True,   False,  False,  False,  False, # 2020-12-26
+           False,  False,  False,  False,  False,  False,  False, # 2021-01-02
+           False,  True,   True,   False,  True,   True,   False, # 2021-01-09
+           False,  True,   True,   True,   True,   True,   False, # 2021-01-16
+           False,  False,  True,   True,   True,   True,   False, # 2021-01-23
+           False,  True,   True,   True,   True,   True,   False, # 2021-01-30
+           False,  True,   True,   True,   True,   True,   False, # 2021-02-06
+           False,  True,   True,   True,   True,   True,   False, # 2021-02-13
+           False,  False,  False,  False,  False,  False,  False, # 2021-02-20
+           False,  True,   True,   True,   True,   True,   False, # 2021-02-27
+           False,  True,   True,   False,  True,   True,   False, # 2021-03-06
+           False,  True,   True,   True,   True,   True,   False, # 2021-03-13
+           False,  True,   True,   True,   True,   True,   False, # 2021-03-20
+           False,  True,   True,   True,   True,   True,   False, # 2021-03-27
+           False,  True,   True,   True,   True,   False,  False, # 2021-04-03
+           False,  True,   True,   True,   True,   True,   False, # 2021-04-10
+           False,  True,   True,   True,   True,   True,   False, # 2021-04-17
+           False,  False,  False,  False,  False,  False,  False, # 2021-04-24
+           False,  True,   True,   True,   True,   True,   False, # 2021-05-01
+           False,  True,   True,   True,   True,   True,   False, # 2021-05-08
+           False,  True,   True,   True,   True,   True,   False, # 2021-05-15
+           False,  True,   True,   True,   True,   True,   False, # 2021-05-22
+           False,  True,   True,   True,   True,   True,   False, # 2021-05-29
+           False,  False,  True,   True,   True,   True,   False, # 2021-06-05
+           False,  True,   True,   True,   True,   True,   False, # 2021-06-12
+           False,  True,   True,   True,   True,   True,   False, # 2021-06-19
+           False,  True,   True,   True,   True,   True,   False] # 2021-06-26
 
 
     DATE = ["2020-08-30", "2020-08-31", "2020-09-01", "2020-09-02", "2020-09-03", "2020-09-04", "2020-09-05", 
@@ -94,18 +95,18 @@ class Data:
             "2021-06-20", "2021-06-21", "2021-06-22", "2021-06-23", "2021-06-24", "2021-06-25", "2021-06-26"]
     
     
-    PATTERN = [[1, 7, 6, 5, 4],
-               [3, 2, 1, 7, 6],
-               [5, 4, 3, 2, 1],
-               [7, 6, 5, 4, 3],
-               [2, 1, 7, 6, 5],
-               [4, 3, 2, 1, 7],
-               [6, 5, 4, 3, 2]]
+    PATTERN = [1, 3, 5, 7, 2, 4, 6]
 
-    ALL = all()
 
-def all():
-    all_list = []
-    for i in range(len(Data.DAY)):
-        all_list.append([Data.DAY[i], Data.DATE[i], Data.PATTERN[i%7]])
-    print(all_list)
+    def all(self):
+        all_list = []
+        p = 0
+        
+        for i in range(len(Data.DAY)):
+            if Data.DAY[i]:
+                all_list.append([Data.DAY[i], Data.DATE[i], Data.PATTERN[p%7]])
+                p += 1
+            else: 
+                all_list.append([Data.DAY[i], Data.DATE[i], None])
+                
+        return all_list[self]
