@@ -29,7 +29,7 @@ description = { # Optional: Leave strings blank for nothing.
     }
 
 # Find your Calendar ID and put it here. Leave as None to use your default calendar.
-calendar_id = None
+calendar_id = "bbghk1ec8mrg8etls5vfbemh2g@group.calendar.google.com"
 
 def day(day: int, day_of_school_year: int):
     if not Data.DAY[day_of_school_year]:
@@ -76,3 +76,6 @@ def first_month():
             event_creator.new(i, calendar_id=calendar_id)
         
         pattern = pattern[1:] + pattern[0:1]
+
+if __name__ == "__main__":
+    first_month()
