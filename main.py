@@ -16,7 +16,7 @@ classes = {
     5:"Economics", 
     6:"AP Environmental Science", 
     7:"Calculus"
-    }
+}
 
 description = { # Optional: Leave strings blank for nothing.
     1:"Period 1",
@@ -26,10 +26,12 @@ description = { # Optional: Leave strings blank for nothing.
     5:"Period 5", 
     6:"Period 6", 
     7:"Period 7"
-    }
+}
 
 # Find your Calendar ID and put it here. Leave as None to use your default calendar.
-calendar_id = "bbghk1ec8mrg8etls5vfbemh2g@group.calendar.google.com"
+calendar_id = None
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 
 def day(day: int, day_of_school_year: int):
     if not Data.DAY[day_of_school_year]:
@@ -68,7 +70,7 @@ def day(day: int, day_of_school_year: int):
 def first_month():
     pattern = Data.PATTERN
 
-    for a in range(41):
+    for a in range(1):
         if not Data.DAY[a]:
             continue
         
