@@ -1,9 +1,7 @@
 from googleapiclient.discovery import build
 import pickle
 
-def new(event: dict, calendar_id=None):
-    if calendar_id == None: calendar_id = "primary"
-    
+def new(event: dict, calendar_id=None):    
     SCOPES = ["https://www.googleapis.com/auth/calendar"]
 
     try:

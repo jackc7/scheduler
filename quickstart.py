@@ -1,6 +1,7 @@
 import datetime
 import pickle
 import os.path
+
 from googleapiclient.discovery import build
 from google_auth_oauthlib.flow import InstalledAppFlow
 from google.auth.transport.requests import Request
@@ -23,18 +24,16 @@ if not creds or not creds.valid:
             print("'credentials.json' not found. Download it from https://developers.google.com/calendar/quickstart/python and run quickstart.py.")
             exit()
         creds = flow.run_local_server(port=0)
-    # Save the credentials for the next run
     with open('token.pickle', 'wb') as token:
         pickle.dump(creds, token)
 
 service = build('calendar', 'v3', credentials=creds)
 
-# Call the Calendar API
-now = datetime.datetime.utcnow().isoformat() + 'Z' # 'Z' indicates UTC time
+now = datetime.datetime.utcnow().isoformat() + 'Z'
 print('Getting the upcoming 10 events')
 events_result = service.events().list(calendarId='primary', timeMin=now,
-                                    maxResults=10, singleEvents=True,
-                                    orderBy='startTime').execute()
+                                      maxResults=10, singleEvents=True,
+                                      orderBy='startTime').execute()
 events = events_result.get('items', [])
 
 if not events:

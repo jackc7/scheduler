@@ -100,7 +100,7 @@ class Data:
     # def __init__(self):
     #     super().__init__()
 
-    def all(day=None):#self, day=None):
+    def all(day=None):
         """If you leave day as None, it will return all days.
         If you set it to an integer, it will return the given day.
         Day 0 = August 30, 2020
@@ -116,10 +116,10 @@ class Data:
             else: 
                 all_list.append([Data.DAY[i], Data.DATE[i], None])
         
-        if day is None:
+        if day:
             return all_list
         else:
             return all_list[day]
 
 if __name__ == "__main__":
-    print(Data.all(19))
+   print(Data.all())

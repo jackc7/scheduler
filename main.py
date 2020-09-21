@@ -1,43 +1,23 @@
 from data import Data
 import event_creator
+import yaml
 
-# Instructions to get started:  
 
-# Open main.py.  
-# Fill in classes, description, and calendar_id.  
-# Run main.py.
+config_yaml = open("config.yml", "r")
+config = yaml.load(config_yaml, Loader=yaml.FullLoader)
 
-# List names of periods from 1 to 7 here 
-classes = {
-    1:"Wood 2",
-    2:"Forensic Science",
-    3:"English 4",
-    4:"Study", 
-    5:"Economics", 
-    6:"AP Environmental Science", 
-    7:"Calculus"
-}
+classes = config["classes"]
+description = config["description"]
+try: calendar_id = config["calendar_id"]
+except: calendar_id = "primary"
 
-description = { # Optional: Leave strings blank for nothing.
-    1:"Period 1",
-    2:"Period 2",
-    3:"Period 3",
-    4:"Period 4", 
-    5:"Period 5", 
-    6:"Period 6", 
-    7:"Period 7"
-}
-
-# Find your Calendar ID and put it here. Leave as None to use your default calendar.
-calendar_id = None
-
-# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+# print(classes, description, calendar_id)
+# exit()
 
 def day(day: int, day_of_school_year: int):
     if not Data.DAY[day_of_school_year]:
         return f"No school on day {str(day_of_school_year)}"
     
-    # Very bad code, ignore.
     if   day == 1: schedule = [[classes[1], description[1]],[classes[7], description[7]],[classes[6], description[6]],[classes[5], description[5]],[classes[4], description[4]]]
     elif day == 2: schedule = [[classes[2], description[2]],[classes[1], description[1]],[classes[7], description[7]],[classes[6], description[6]],[classes[5], description[5]]]
     elif day == 3: schedule = [[classes[3], description[3]],[classes[2], description[2]],[classes[1], description[1]],[classes[7], description[7]],[classes[6], description[6]]]
@@ -45,7 +25,9 @@ def day(day: int, day_of_school_year: int):
     elif day == 5: schedule = [[classes[5], description[5]],[classes[4], description[4]],[classes[3], description[3]],[classes[2], description[2]],[classes[1], description[1]]]
     elif day == 6: schedule = [[classes[6], description[6]],[classes[5], description[5]],[classes[4], description[4]],[classes[3], description[3]],[classes[2], description[2]]]
     elif day == 7: schedule = [[classes[7], description[7]],[classes[6], description[6]],[classes[5], description[5]],[classes[4], description[4]],[classes[3], description[3]]]
-    else: return "Not a valid day. Only accepts integer between 1 and 7."
+    else:
+        print("Not a valid day. Only accepts integer between 1 and 7.")
+        return
     
     class_times = [["07:35:00", "08:35:00"], ["08:40:00", "09:40:00"], ["09:45:00", "10:45:00"], ["11:25:00", "12:25:00"], ["12:30:00", "13:30:00"]]
     event_list = []
@@ -70,7 +52,8 @@ def day(day: int, day_of_school_year: int):
 def first_month():
     pattern = Data.PATTERN
 
-    for a in range(1):
+    print("Working... Please wait 10-15 seconds.")
+    for a in range(41):
         if not Data.DAY[a]:
             continue
         
@@ -81,3 +64,4 @@ def first_month():
 
 if __name__ == "__main__":
     first_month()
+    
