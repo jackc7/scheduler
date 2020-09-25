@@ -97,9 +97,7 @@ class Data:
     
     PATTERN = [1, 3, 5, 7, 2, 4, 6]
 
-    # def __init__(self):
-    #     super().__init__()
-
+    
     def all(day=None):
         """For debug purposes.
         If you leave day as None, it will return all days.
@@ -117,10 +115,7 @@ class Data:
             else: 
                 all_list.append([Data.DAY[i], Data.DATE[i], None])
         
-        if day:
+        if day in None:
             return all_list
         else:
             return all_list[day]
-
-if __name__ == "__main__":
-   print(Data.all())
