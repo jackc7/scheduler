@@ -115,7 +115,7 @@ class Data:
             else: 
                 all_list.append([Data.DAY[i], Data.DATE[i], None])
         
-        if day in None:
+        if day is None:
             return all_list
         else:
             return all_list[day]
