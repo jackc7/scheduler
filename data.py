@@ -101,7 +101,8 @@ class Data:
     #     super().__init__()
 
     def all(day=None):
-        """If you leave day as None, it will return all days.
+        """For debug purposes.
+        If you leave day as None, it will return all days.
         If you set it to an integer, it will return the given day.
         Day 0 = August 30, 2020
         """
