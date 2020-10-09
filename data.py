@@ -93,6 +93,8 @@ class Data:
 
     
     def class_times(lunch: int) -> list:
+        
+        # TODO - Change based on new schedule.
         times = [["07:35:00", "08:44:00"],
                  ["08:49:00", "09:58:00"],
                  ["10:03:00", "11:12:00"]]
@@ -110,7 +112,7 @@ class Data:
         
         return times
     
-    def all_data(day=None) -> list:
+    def all_data(day: int = None) -> list:
         """If you leave day as None, it will return all days.
         If you set it to an integer, it will return the given day.
         Day 0 = October 11, 2020
@@ -131,12 +133,7 @@ class Data:
                 p += 1
             else:
                 all_list.append([Data.DAY[i], Data.DATE[i], None])
-
         if day is None:
             return all_list
         else:
             return all_list[day]
-
-
-if __name__ == "__main__":
-    print(Data.class_times(2))

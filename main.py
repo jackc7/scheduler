@@ -20,12 +20,13 @@ def day(day_number: int, day_of_school_year: int):
 
     # Constructs schedule for the day.        
     schedule = [[classes[Data.all_data(day_of_school_year)[2][x]], description[Data.all_data(day_of_school_year)[2][x]]] for x in range(5)]
-    
-    if lunch[day_number] == "2":
-        last_block = schedule[-1]
-        schedule = schedule[:-1]
-        schedule.append(schedule[-1])
-        schedule.append(last_block)
+
+    # TODO - Change based on new schedule
+    # if lunch[day_number] == "2":
+    #     last_block = schedule[-1]
+    #     schedule = schedule[:-1]
+    #     schedule.append(schedule[-1])
+    #     schedule.append(last_block)
     
     print(schedule)
     
@@ -63,8 +64,8 @@ def main():
         pattern = Data.all_data(a)[2]
 
         for i in day(pattern[0], a):
-            # event_creator.new(i, calendar_id=calendar_id)
-            # print(i["summary"], i["location"], i["start"]["dateTime"], i["end"]["dateTime"])
+            event_creator.new(i, calendar_id=calendar_id)
+            print(i["summary"], i["location"], i["start"]["dateTime"], i["end"]["dateTime"])
             print()
         pattern = pattern[1:] + pattern[0:1]
 
