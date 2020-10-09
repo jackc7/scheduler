@@ -12,6 +12,8 @@ creds = None
 if os.path.exists('token.pickle'):
     with open('token.pickle', 'rb') as token:
         creds = pickle.load(token)
+    print("You already have a token. Run main.py.")
+    raise FileExistsError
 
 if not creds or not creds.valid:
     if creds and creds.expired and creds.refresh_token:
@@ -21,8 +23,7 @@ if not creds or not creds.valid:
             flow = InstalledAppFlow.from_client_secrets_file(
                 'credentials.json', SCOPES)
         except FileNotFoundError:
-            print("'credentials.json' not found. Download it from https://developers.google.com/calendar/quickstart/python and run quickstart.py.")
-            exit()
+            print("You need a 'credentials.json' file to generate a token. Follow the instructions at https://developers.google.com/calendar/quickstart/python and run quickstart.py.")
         creds = flow.run_local_server(port=0)
     with open('token.pickle', 'wb') as token:
         pickle.dump(creds, token)

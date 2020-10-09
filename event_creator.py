@@ -1,8 +1,9 @@
 from googleapiclient.discovery import build
 import pickle
 
+
 def new(event: dict, calendar_id=None):    
-    SCOPES = ["https://www.googleapis.com/auth/calendar"]
+    """Creates a single event on your Calendar."""
 
     try:
         with open("token.pickle", "rb") as token:

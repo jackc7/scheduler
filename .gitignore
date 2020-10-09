@@ -1,6 +1,7 @@
 ﻿__pycache__/
 .vscode/
+.idea/
 
 *.pickle
-credentials.json
+*.json
 test.py
