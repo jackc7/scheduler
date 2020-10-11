@@ -42,13 +42,14 @@ class Data:
            False,  True,   True,   True,   True,   True,   False, # 2021-05-29
            False,  False,  True,   True,   True,   True,   False, # 2021-06-05
            False,  True,   True,   True,   True,   True,   False, # 2021-06-12
-           False,  True,   True,   True,   True,   True,   False, # 2021-06-19
-           False,  True,   True,   True,   True,   True,   False] # 2021-06-26
+           False,  True,   True,   True,   True,   True,   False, # 2021-06-19 # Final Week
+           False,  True,   True,   True,   True,   True,   False] # 2021-06-26 # Snow days
 
     # List of all dates in ISO format, corresponds to DAY list above.
     # Ordinal 737709 = 2020-10-11
     DATE = [str(datetime.date.fromordinal(737709 + x)) for x in range(len(DAY))]
     
+    # Pattern of day numbers.
     PATTERN = [2, 4, 6, 1, 3, 5, 7]
 
     CLASS_PATTERN = {1: [1, 7, 6, 5, 4],
@@ -60,25 +61,27 @@ class Data:
                      7: [7, 6, 5, 4, 3]}
 
     
-    def class_times(lunch: int) -> list:
+    def class_times() -> list:
+        """Returns the bell schedule for Monday, Tuesday, Thursday, and Friday.
+        Do not use this on Wednesdays. Use method wednesday_times() instead.
+        """
         
-        # TODO - Change based on new schedule.
-        times = [["07:35:00", "08:44:00"],
-                 ["08:49:00", "09:58:00"],
-                 ["10:03:00", "11:12:00"]]
+        return [["07:35:00", "08:40:00"],
+                ["08:45:00", "09:50:00"],
+                ["09:55:00", "11:00:00"],
+                ["11:05:00", "13:06:00"],            
+                ["13:11:00", "14:10:00"]]
         
-        if lunch == 0:
-            times.append(["11:17:00", "12:56:00"])
-        elif lunch == 1:
-            times.append(["11:47:00","12:56:00"])
-        elif lunch == 2:
-            times += [["11:17:00", "11:49:00"], ["12:24:00", "12:56:00"]]
-        elif lunch == 3:
-            times.append(["12:26:00", "12:56:00"])
             
-        times.append(["13:01:00", "14:10:00"])
+    def wednesday_times() -> list:
+        """Returns the bell schedule for wednesdays"""
         
-        return times
+        return [["07:35:00", "08:35:00"],
+                ["08:40:00", "09:40:00"],
+                ["09:45:00", "10:45:00"],
+                ["11:25:00", "12:25:00"],
+                ["12:30:00", "13:30:00"]]
+
     
     def all_data(day: int = None) -> list:
         """If you leave day as None, it will return all days.
@@ -89,18 +92,18 @@ class Data:
         all_list = []
         p = 0
 
-        for i in range(len(Data.DAY)):
+        for i, x in enumerate(Data.DAY):
             if Data.DATE[i] == "2020-11-02":
                 p -= 4
             elif Data.DATE[i] == "2021-04-05":
                 p -= 6
 
-            if Data.DAY[i]:
+            if x:
                 day_number = Data.PATTERN[p%7]
-                all_list.append([Data.DAY[i], Data.DATE[i], Data.CLASS_PATTERN[day_number]])
+                all_list.append([x, Data.DATE[i], Data.CLASS_PATTERN[day_number]])
                 p += 1
             else:
-                all_list.append([Data.DAY[i], Data.DATE[i], None])
+                all_list.append([x, Data.DATE[i], None])
         if day is None:
             return all_list
         else:

@@ -18,16 +18,6 @@ description:
     6: Period 6
     7: Period 7
 
-# First, second or third lunch for each class (put 0 for ambiguous). Must be in string format.
-lunches:
-    "p1": 1
-    "p2": 3
-    "p3": 1
-    "p4": 0
-    "p5": 2
-    "p6": 3
-    "p7": 3
-
 # Replace with your own calendar ID or leave blank to use your default calendar (not recommended).
 calendar_id:
-    hsk2gtc99g6misvg4k811t8glk@group.calendar.google.com
+    7jrtb86b8fumbad17qv6l20l38@group.calendar.google.com
