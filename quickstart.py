@@ -22,9 +22,10 @@ if not creds or not creds.valid:
         try:
             flow = InstalledAppFlow.from_client_secrets_file(
                 'credentials.json', SCOPES)
+            creds = flow.run_local_server(port=0)
         except FileNotFoundError:
             print("You need a 'credentials.json' file to generate a token. Follow the instructions at https://developers.google.com/calendar/quickstart/python and run quickstart.py.")
-        creds = flow.run_local_server(port=0)
+            exit()
     with open('token.pickle', 'wb') as token:
         pickle.dump(creds, token)
 

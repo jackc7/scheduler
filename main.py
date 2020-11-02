@@ -54,7 +54,7 @@ def main():
     for a, x in enumerate(Data.DAY):
         if not x:
             continue
-
+        print(Data.DATE[a])
         pattern = Data.all_data(a)[2]
 
         for i in day(pattern[0], a):
@@ -62,6 +62,5 @@ def main():
             print(i["summary"] + ", " + i["location"] + f"\n    Starts: " + i["start"]["dateTime"] + "\n    Ends: " + i["end"]["dateTime"])
 
         pattern = pattern[1:] + pattern[0:1]
-
 if __name__ == "__main__":
     main()

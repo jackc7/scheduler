@@ -2,8 +2,8 @@ from googleapiclient.discovery import build
 import pickle
 
 
-def new(event: dict, calendar_id=None):    
-    """Creates a single event on your Calendar."""
+def new(event: dict, calendar_id=None) -> None:    
+    """Creates a single event on your Calendar and returns None."""
 
     try:
         with open("token.pickle", "rb") as token:

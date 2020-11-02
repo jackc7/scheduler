@@ -82,10 +82,10 @@ class Data:
                 ["11:25:00", "12:25:00"],
                 ["12:30:00", "13:30:00"]]
 
-    
+    # TODO - Remove this and make a seperate function to handle schedule rotation.
     def all_data(day: int = None) -> list:
-        """If you leave day as None, it will return all days.
-        If you set it to an integer, it will return the given day.
+        """If you leave day as None, it will return data from all days.
+        If you set it to an integer, it will return data from the given day.
         Day 0 = October 11, 2020
         """
 
@@ -93,9 +93,7 @@ class Data:
         p = 0
 
         for i, x in enumerate(Data.DAY):
-            if Data.DATE[i] == "2020-11-02":
-                p -= 4
-            elif Data.DATE[i] == "2021-04-05":
+            if Data.DATE[i] == "2021-04-05":
                 p -= 6
 
             if x:
