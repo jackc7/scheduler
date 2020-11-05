@@ -33,11 +33,11 @@ def day(day_number: int, day_of_school_year: int):
             "location": f"{schedule[i][1]}",
             "description": "Dedham High School",
             "start": {
-                "dateTime": f"{Data.DATE[day_of_school_year]}T{x[0]}-04:00",
+                "dateTime": f"{Data.DATE[day_of_school_year]}T{x[0]}-05:00",
                 "timeZone": "America/New_York",
             },
             "end": {
-                "dateTime": f"{Data.DATE[day_of_school_year]}T{x[1]}-04:00",
+                "dateTime": f"{Data.DATE[day_of_school_year]}T{x[1]}-05:00",
                 "timeZone": "America/New_York",
             }
         }
