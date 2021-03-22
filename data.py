@@ -76,11 +76,11 @@ class Data:
     def wednesday_times() -> list:
         """Returns the bell schedule for wednesdays"""
         
-        return [["07:35:00", "08:35:00"],
-                ["08:40:00", "09:40:00"],
-                ["09:45:00", "10:45:00"],
-                ["11:25:00", "12:25:00"],
-                ["12:30:00", "13:30:00"]]
+        return [["07:35:00", "08:06:00"],
+                ["08:11:00", "08:42:00"],
+                ["08:47:00", "09:18:00"],
+                ["09:23:00", "09:54:00"],
+                ["09:59:00", "10:30:00"]]
 
     # TODO - Remove this and make a seperate function to handle schedule rotation.
     def all_data(day: int = None) -> list:
@@ -101,6 +101,7 @@ class Data:
                 p += 1
             else:
                 all_list.append([x, Data.DATE[i], None])
+                
         if day is None:
             return all_list
         else:

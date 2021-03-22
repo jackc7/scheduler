@@ -33,11 +33,11 @@ def day(day_number: int, day_of_school_year: int):
             "location": f"{schedule[i][1]}",
             "description": "Dedham High School",
             "start": {
-                "dateTime": f"{Data.DATE[day_of_school_year]}T{x[0]}-05:00",
+                "dateTime": f"{Data.DATE[day_of_school_year]}T{x[0]}",
                 "timeZone": "America/New_York",
             },
             "end": {
-                "dateTime": f"{Data.DATE[day_of_school_year]}T{x[1]}-05:00",
+                "dateTime": f"{Data.DATE[day_of_school_year]}T{x[1]}",
                 "timeZone": "America/New_York",
             }
         }
@@ -62,5 +62,7 @@ def main():
             print(i["summary"] + ", " + i["location"] + f"\n    Starts: " + i["start"]["dateTime"] + "\n    Ends: " + i["end"]["dateTime"])
 
         pattern = pattern[1:] + pattern[0:1]
+
+        
 if __name__ == "__main__":
     main()
