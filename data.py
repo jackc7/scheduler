@@ -93,8 +93,6 @@ class Data:
         p = 0
 
         for i, x in enumerate(Data.DAY):
-            if Data.DATE[i] == "2021-04-05":
-                p -= 6
             if x:
                 day_number = Data.PATTERN[p%7]
                 all_list.append([x, Data.DATE[i], Data.CLASS_PATTERN[day_number]])
